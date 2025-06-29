@@ -1,22 +1,22 @@
-# Shaji’s SaaS Boilerplate
+# My SaaS Starter
 
-Shaji’s SaaS Boilerplate is a production-grade starter kit for building SaaS applications with **Next.js**, **Tailwind CSS**, **Shadcn UI** and TypeScript. It includes everything you need—authentication, multi-tenancy, role-based access control, database integration, testing, CI/CD, and more—to launch quickly and scale with confidence.
+My SaaS Starter is a production-grade starter kit for building SaaS applications with **Next.js**, **Tailwind CSS**, **Shadcn UI** and **TypeScript**. It includes everything you need—authentication, multi-tenancy, role-based access control, database integration, testing, CI/CD, and more—to launch quickly and scale with confidence.
 
 ## Features
 
 Developer-friendly, flexible codebase with only the essentials:
 
-- ⚡ [Next.js](https://nextjs.org) App Router
-- 🔥 Strict type-checking with [TypeScript](https://www.typescriptlang.org)
-- 💎 Styling with [Tailwind CSS](https://tailwindcss.com) & Shadcn UI components
-- 🔒 Authentication and user management with [Clerk](https://clerk.com)
-- 👥 Multi-tenancy & team support with role-based permissions
-- 📦 Type-safe ORM via DrizzleORM (PostgreSQL • SQLite • MySQL)
-- 🌐 Internationalization (i18n) powered by `next-intl`
-- 🧑‍🔬 Unit, integration & E2E tests (Vitest + Playwright)
-- 🛠️ Pre-configured linting, formatting, Husky hooks & commit conventions
-- 🚀 Production-ready configuration for error monitoring, logging and CI/CD
-- 📈 Storybook for isolated component development
+- Next.js App Router
+- Strict type-checking with TypeScript
+- Styling with Tailwind CSS and Shadcn UI components
+- Authentication and user management with Clerk
+- Multi-tenancy & team support with role-based permissions
+- Type-safe ORM via DrizzleORM (PostgreSQL • SQLite • MySQL)
+- Internationalization (i18n) with next-intl
+- Unit, integration & E2E tests (Vitest + Playwright)
+- Pre-configured linting, formatting, Husky hooks & commit conventions
+- Production-ready configuration for error monitoring, logging and CI/CD
+- Storybook for isolated component development
 
 ## Requirements
 
