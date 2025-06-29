@@ -26,6 +26,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: 📊 Run Lighthouse CI
+        run: npm run ci:lighthouse
+
   test:
     strategy:
       matrix:

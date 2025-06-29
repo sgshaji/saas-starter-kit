@@ -14,10 +14,10 @@ export async function sendEmail({
   subject,
   html,
   from = process.env.EMAIL_FROM!,
-}: EmailParams): Promise<void> {
-  if (!from || !process.env.RESEND_API_KEY) {
+}: EmailParams): Promise<unknown> {
+  if (!from) {
     // Skip silently in non-configured environments (e.g. local dev).
-    console.warn('Email not sent – missing from address or RESEND_API_KEY');
+    console.warn('Email not sent – missing from address');
     return;
   }
 
@@ -29,12 +29,13 @@ export async function sendEmail({
       html,
     });
 
-    if (result.error) {
-      console.error('Resend error:', result.error);
+    if (result && (result as any).error) {
+      console.error('Resend error:', (result as any).error);
     }
 
-    // done
+    return result;
   } catch (error) {
     console.error('Email send failed:', error);
+    throw error;
   }
 }
