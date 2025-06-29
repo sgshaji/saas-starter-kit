@@ -1,3 +1,3 @@
-export { PricingCard } from '@/features/billing/PricingCard';
-export { PricingFeature } from '@/features/billing/PricingFeature';
-export { PricingInformation } from '@/features/billing/PricingInformation';
+export { PricingCard } from '@/modules/billing/PricingCard';
+export { PricingFeature } from '@/modules/billing/PricingFeature';
+export { PricingInformation } from '@/modules/billing/PricingInformation';

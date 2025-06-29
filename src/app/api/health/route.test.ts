@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { GET, HealthResponseSchema } from './route';
+import { GET } from './route';
+import { HealthResponseSchema } from './schema';
 
 // NOTE: Next.js route handlers are just functions; we can invoke directly.
 
