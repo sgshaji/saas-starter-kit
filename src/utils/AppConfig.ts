@@ -6,7 +6,7 @@ const localePrefix: LocalePrefix = 'as-needed';
 
 // FIXME: Update this configuration file based on your project information
 export const AppConfig = {
-  name: 'SaaS Template',
+  name: 'Shaji\'s SaaS Starter Kit',
   locales: [
     {
       id: 'en',

@@ -15,12 +15,17 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 const OrganizationSelectionPage = () => (
   <div className="flex min-h-screen items-center justify-center">
-    <OrganizationList
-      afterSelectOrganizationUrl="/dashboard"
-      afterCreateOrganizationUrl="/dashboard"
-      hidePersonal
-      skipInvitationScreen
-    />
+    {(() => {
+      const ENABLE_TEAMS = process.env.NEXT_PUBLIC_ENABLE_TEAMS === 'true';
+      return (
+        <OrganizationList
+          afterSelectOrganizationUrl="/dashboard"
+          afterCreateOrganizationUrl="/dashboard"
+          hidePersonal={ENABLE_TEAMS}
+          skipInvitationScreen
+        />
+      );
+    })()}
   </div>
 );
 

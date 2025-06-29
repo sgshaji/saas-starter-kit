@@ -17,6 +17,7 @@ export async function generateMetadata(props: { params: { locale: string } }) {
 
 export default function DashboardLayout(props: { children: React.ReactNode }) {
   const t = useTranslations('DashboardLayout');
+  const ENABLE_TEAMS = process.env.NEXT_PUBLIC_ENABLE_TEAMS === 'true';
 
   return (
     <>
@@ -28,15 +29,21 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
                 href: '/dashboard',
                 label: t('home'),
               },
-              // PRO: Link to the /dashboard/todos page
-              {
-                href: '/dashboard/organization-profile/organization-members',
-                label: t('members'),
-              },
-              {
-                href: '/dashboard/organization-profile',
-                label: t('settings'),
-              },
+              // Show org-specific links only when teams are enabled
+              ...(
+                ENABLE_TEAMS
+                  ? [
+                      {
+                        href: '/dashboard/organization-profile/organization-members',
+                        label: t('members'),
+                      },
+                      {
+                        href: '/dashboard/organization-profile',
+                        label: t('settings'),
+                      },
+                    ]
+                  : []
+              ),
               // PRO: Link to the /dashboard/billing page
             ]}
           />

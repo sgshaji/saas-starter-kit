@@ -1,8 +1,8 @@
 {
   "name": "my-saas",
   "version": "1.7.6",
-  "author": "Shaji Sivaraman",
   "description": "Production-ready SaaS boilerplate with auth, roles, Stripe, and team support.",
+  "author": "Shaji Sivaraman",
   "scripts": {
     "dev:spotlight": "spotlight-sidecar",
     "dev:next": "next dev",
@@ -58,6 +58,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
+    "resend": "^4.6.0",
     "sharp": "^0.33.5",
     "stripe": "^16.12.0",
     "tailwind-merge": "^2.5.4",

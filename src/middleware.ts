@@ -27,6 +27,8 @@ export default function middleware(
   request: NextRequest,
   event: NextFetchEvent,
 ) {
+  const ENABLE_TEAMS = process.env.NEXT_PUBLIC_ENABLE_TEAMS === 'true';
+
   if (
     request.nextUrl.pathname.includes('/sign-in')
     || request.nextUrl.pathname.includes('/sign-up')
@@ -48,7 +50,8 @@ export default function middleware(
       const authObj = await auth();
 
       if (
-        authObj.userId
+        ENABLE_TEAMS
+        && authObj.userId
         && !authObj.orgId
         && req.nextUrl.pathname.includes('/dashboard')
         && !req.nextUrl.pathname.endsWith('/organization-selection')

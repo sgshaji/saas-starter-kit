@@ -24,6 +24,7 @@ export const DashboardHeader = (props: {
   }[];
 }) => {
   const locale = useLocale();
+  const ENABLE_TEAMS = process.env.NEXT_PUBLIC_ENABLE_TEAMS === 'true';
 
   return (
     <>
@@ -44,21 +45,23 @@ export const DashboardHeader = (props: {
           <path d="M17 5 7 19" />
         </svg>
 
-        <OrganizationSwitcher
-          organizationProfileMode="navigation"
-          organizationProfileUrl={getI18nPath(
-            '/dashboard/organization-profile',
-            locale,
-          )}
-          afterCreateOrganizationUrl="/dashboard"
-          hidePersonal
-          skipInvitationScreen
-          appearance={{
-            elements: {
-              organizationSwitcherTrigger: 'max-w-28 sm:max-w-52',
-            },
-          }}
-        />
+        {ENABLE_TEAMS && (
+          <OrganizationSwitcher
+            organizationProfileMode="navigation"
+            organizationProfileUrl={getI18nPath(
+              '/dashboard/organization-profile',
+              locale,
+            )}
+            afterCreateOrganizationUrl="/dashboard"
+            hidePersonal
+            skipInvitationScreen
+            appearance={{
+              elements: {
+                organizationSwitcherTrigger: 'max-w-28 sm:max-w-52',
+              },
+            }}
+          />
+        )}
 
         <nav className="ml-3 max-lg:hidden">
           <ul className="flex flex-row items-center gap-x-3 text-lg font-medium [&_a:hover]:opacity-100 [&_a]:opacity-75">
