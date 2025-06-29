@@ -1,3 +1,10 @@
+# 1.0.0 (2025-06-29)
+
+
+### Bug Fixes
+
+* adjust sendEmail to always return void ([e2d89df](https://github.com/sgshaji/saas-starter-kit/commit/e2d89df116dfd6badc90b3536b310b1494fff45c))
+
 ## [1.7.6](https://github.com/ixartz/SaaS-Boilerplate/compare/v1.7.5...v1.7.6) (2025-05-01)
 
 
