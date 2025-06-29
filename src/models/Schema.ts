@@ -1,5 +1,6 @@
 import {
   bigint,
+  pgEnum,
   pgTable,
   serial,
   text,
@@ -55,3 +56,28 @@ export const todoSchema = pgTable('todo', {
     .notNull(),
   createdAt: timestamp('created_at', { mode: 'date' }).defaultNow().notNull(),
 });
+
+export const roleEnum = pgEnum('role', ['owner', 'admin', 'member']);
+
+export const organizationMemberSchema = pgTable(
+  'organization_member',
+  {
+    id: serial('id').primaryKey(),
+    organizationId: text('organization_id').notNull(),
+    userId: text('user_id').notNull(),
+    role: roleEnum('role')
+      .default('member')
+      .notNull(),
+    createdAt: timestamp('created_at', { mode: 'date' })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => {
+    return {
+      organizationUserIdx: uniqueIndex('organization_user_idx').on(
+        table.organizationId,
+        table.userId,
+      ),
+    };
+  },
+);

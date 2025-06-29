@@ -11,6 +11,8 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitOverride": true,
 
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -43,7 +45,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"]
+      "@/public/*": ["./public/*"],
+      "@modules/*": ["./src/modules/*"]
     },
 
     // Editor support
