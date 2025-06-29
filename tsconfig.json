@@ -11,6 +11,8 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitOverride": true,
 
     "noImplicitAny": true,
     "noImplicitReturns": true,
