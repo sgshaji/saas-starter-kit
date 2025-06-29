@@ -1,6 +1,8 @@
 {
-  "name": "saas-boilerplate",
+  "name": "my-saas",
   "version": "1.7.6",
+  "author": "Shaji Sivaraman",
+  "description": "Production-ready SaaS boilerplate with auth, roles, Stripe, and team support.",
   "scripts": {
     "dev:spotlight": "spotlight-sidecar",
     "dev:next": "next dev",
