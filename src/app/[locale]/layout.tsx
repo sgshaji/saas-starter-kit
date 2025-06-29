@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
-import { AllLocales } from '@/utils/AppConfig';
+import { AllLocales } from '@/core/AppConfig';
 
 export const metadata: Metadata = {
   icons: [

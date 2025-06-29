@@ -6,7 +6,7 @@ import {
 } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-import { AllLocales, AppConfig } from './utils/AppConfig';
+import { AllLocales, AppConfig } from './core/AppConfig';
 
 const intlMiddleware = createMiddleware({
   locales: AllLocales,

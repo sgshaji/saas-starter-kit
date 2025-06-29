@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import { CenteredFooter } from '@/features/landing/CenteredFooter';
-import { Section } from '@/features/landing/Section';
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from '@/core/AppConfig';
+import { CenteredFooter } from '@/modules/landing/CenteredFooter';
+import { Section } from '@/modules/landing/Section';
 
 import { Logo } from './Logo';
 
