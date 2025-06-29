@@ -2,8 +2,8 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { useTranslations } from 'next-intl';
 
 import { buttonVariants } from '@/components/ui/buttonVariants';
-import { CenteredHero } from '@/features/landing/CenteredHero';
-import { Section } from '@/features/landing/Section';
+import { CenteredHero } from '@/modules/landing/CenteredHero';
+import { Section } from '@/modules/landing/Section';
 
 export const Hero = () => {
   const t = useTranslations('Hero');

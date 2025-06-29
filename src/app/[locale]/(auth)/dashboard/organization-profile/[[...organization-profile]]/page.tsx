@@ -1,7 +1,7 @@
 import { OrganizationProfile } from '@clerk/nextjs';
 import { useTranslations } from 'next-intl';
 
-import { TitleBar } from '@/features/dashboard/TitleBar';
+import { TitleBar } from '@/modules/dashboard/TitleBar';
 import { getI18nPath } from '@/utils/Helpers';
 
 const OrganizationProfilePage = (props: { params: { locale: string } }) => {

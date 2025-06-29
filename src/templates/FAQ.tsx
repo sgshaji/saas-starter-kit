@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Section } from '@/features/landing/Section';
+import { Section } from '@/modules/landing/Section';
 
 export const FAQ = () => {
   const t = useTranslations('FAQ');
