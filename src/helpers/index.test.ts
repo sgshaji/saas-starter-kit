@@ -1,9 +1,9 @@
-import { AppConfig } from './AppConfig';
-import { getI18nPath } from './Helpers';
+import { AppConfig } from '../core/AppConfig';
+import { getI18nPath } from './index';
 
-describe('Helpers', () => {
+describe('helpers', () => {
   describe('getI18nPath function', () => {
-    it('should not change the path for default language', () => {
+    it('should not change the path for the default language', () => {
       const url = '/random-url';
       const locale = AppConfig.defaultLocale;
 

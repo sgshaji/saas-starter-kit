@@ -1,0 +1,13 @@
+{
+  "extends": ["config:recommended"],
+  "schedule": ["before 5am on monday"],
+  "labels": ["🛠 dependencies"],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "Types",
+      "groupSlug": "types"
+    }
+  ]
+}

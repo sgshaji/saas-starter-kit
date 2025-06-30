@@ -33,6 +33,36 @@ A production-ready SaaS boilerplate built with modern tools like **Next.js**, **
 
 ---
 
+## 🛠️ Prerequisites
+
+| Tool | Version |
+|------|---------|
+| Node | >= 18.17 |
+| PNPM | >= 8.0 |
+| Docker (optional for Postgres) | >= 24 |
+
+> ⚠️  Your local versions are validated by [volta](https://volta.sh) & `engines` field – installation will fail early when they don't match.
+
+## 🔑 Environment Variables
+
+Environment variables are declared & validated in [`src/libs/Env.ts`](./src/libs/Env.ts). Run:
+
+```bash
+pnpm docs:env
+```
+
+to generate/update the markdown table at `docs/ENV_VARS.md`.
+
+## 🔄 Useful Commands
+
+| Command | Description |
+|---------|-------------|
+| `pnpm db:studio` | Open Drizzle Studio UI connected to your local DB |
+| `pnpm storybook` | Run Storybook on <http://localhost:6006> |
+| `pnpm ci:lighthouse` | Run Lighthouse CI against a local production build |
+
+---
+
 ## ⚡️ Quick Start
 
 ```bash

@@ -9,8 +9,14 @@ export default defineConfig({
     globals: true, // This is needed by @testing-library to be cleaned up after each test
     include: ['**/*.test.{js,jsx,ts,tsx}'],
     coverage: {
-      include: ['src/**/*'],
-      exclude: ['src/**/*.stories.{js,jsx,ts,tsx}', '**/*.d.ts'],
+      provider: 'v8',
+      all: false,
+      thresholds: {
+        lines: 80,
+        functions: 80,
+        branches: 70,
+        statements: 80,
+      },
     },
     environmentMatchGlobs: [
       ['**/*.test.tsx', 'jsdom'],
