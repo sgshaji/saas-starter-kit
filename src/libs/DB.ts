@@ -31,6 +31,14 @@ if (process.env.NEXT_PHASE !== PHASE_PRODUCTION_BUILD && Env.DATABASE_URL) {
   }
 
   drizzle = globalAny.drizzle;
+
+  // Query logging
+  if (process.env.NODE_ENV !== 'test') {
+    // @ts-expect-error – pino-sql lacks type declarations
+    const { instrument } = await import('pino-sql');
+    const { logger } = await import('./Logger');
+    instrument({ db: drizzle, logger, level: 'debug' });
+  }
 } else {
   // Stores the db connection in the global scope to prevent multiple instances due to hot reloading with Next.js
   const global = globalThis as unknown as { client: PGlite; drizzle: PgliteDatabase<typeof schema> };
@@ -47,6 +55,13 @@ if (process.env.NEXT_PHASE !== PHASE_PRODUCTION_BUILD && Env.DATABASE_URL) {
     await migratePglite(global.drizzle, {
       migrationsFolder: path.join(process.cwd(), 'migrations'),
     });
+  }
+
+  if (process.env.NODE_ENV !== 'test') {
+    // @ts-expect-error – pino-sql lacks type declarations
+    const { instrument } = await import('pino-sql');
+    const { logger } = await import('./Logger');
+    instrument({ db: drizzle, logger, level: 'debug' });
   }
 }
 
