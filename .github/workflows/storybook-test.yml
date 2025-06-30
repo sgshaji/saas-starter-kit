@@ -1,0 +1,22 @@
+name: Storybook Interaction & Visual Tests
+
+on:
+  pull_request:
+    paths:
+      - 'src/components/**'
+      - '.storybook/**'
+      - package.json
+  workflow_dispatch:
+
+jobs:
+  storybook-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Run storybook interaction tests
+        run: pnpm test-storybook

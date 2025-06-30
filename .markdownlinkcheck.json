@@ -1,0 +1,6 @@
+{
+  "ignorePatterns": [
+    { "pattern": "localhost" },
+    { "pattern": "127.0.0.1" }
+  ]
+}

@@ -11,4 +11,13 @@ describe('permissions.can', () => {
   it('member lacks manage_billing', () => {
     expect(can(Roles.MEMBER, Permissions.MANAGE_BILLING)).toBe(false);
   });
+
+  it('admin lacks manage_billing', () => {
+    expect(can(Roles.ADMIN, Permissions.MANAGE_BILLING)).toBe(false);
+  });
+
+  it('member can edit todo but cannot manage team', () => {
+    expect(can(Roles.MEMBER, Permissions.EDIT_TODO)).toBe(true);
+    expect(can(Roles.MEMBER, Permissions.MANAGE_TEAM)).toBe(false);
+  });
 });

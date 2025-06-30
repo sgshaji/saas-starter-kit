@@ -52,3 +52,6 @@ local
 
 # Lighthouse CI artifacts
 .lighthouseci/
+
+# Next.js build output
+.next/
