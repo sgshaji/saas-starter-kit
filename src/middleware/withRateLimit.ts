@@ -2,6 +2,10 @@ import { Redis } from '@upstash/redis';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
+// TODO(plan-limits): When subscription tiers are enforced, derive `limit`
+// from the caller's plan instead of hard-coding it. See
+// `src/lib/plan-limits.ts#getRateLimitForPlan` for the stub helper.
+
 const redis = Redis.fromEnv();
 
 export async function withRateLimit(request: NextRequest, limit = 20, windowSec = 60): Promise<NextResponse | null> {
