@@ -1,3 +1,19 @@
+# [1.1.0](https://github.com/sgshaji/saas-starter-kit/compare/v1.0.0...v1.1.0) (2025-06-29)
+
+
+### Features
+
+* **api:** add /api/health route with zod schema and contract test ([6d3dea3](https://github.com/sgshaji/saas-starter-kit/commit/6d3dea339f67851c5b556e8c9fe3a33bfe34f093))
+* **rbac:** add permissions helper and organization_member schema with migration ([7926287](https://github.com/sgshaji/saas-starter-kit/commit/79262872251e817b7bd140fb11f9fe78ad5b8974))
+* **services:** add auth & billing service wrappers ([b3a3bca](https://github.com/sgshaji/saas-starter-kit/commit/b3a3bca73e350e5b5afe8a95d1768407c0e3b149))
+
+# 1.0.0 (2025-06-29)
+
+
+### Bug Fixes
+
+* adjust sendEmail to always return void ([e2d89df](https://github.com/sgshaji/saas-starter-kit/commit/e2d89df116dfd6badc90b3536b310b1494fff45c))
+
 ## [1.7.6](https://github.com/ixartz/SaaS-Boilerplate/compare/v1.7.5...v1.7.6) (2025-05-01)
 
 

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { getI18nPath } from '@/helpers';
 import { TitleBar } from '@/modules/dashboard/TitleBar';
 
+
 const UserProfilePage = (props: { params: { locale: string } }) => {
   const t = useTranslations('UserProfile');
 

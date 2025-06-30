@@ -1,6 +1,6 @@
 {
   "name": "my-saas",
-  "version": "1.7.6",
+  "version": "1.1.0",
   "description": "Production-ready SaaS boilerplate with auth, roles, Stripe, and team support.",
   "author": "Shaji Sivaraman",
   "scripts": {
