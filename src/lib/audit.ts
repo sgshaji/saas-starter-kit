@@ -11,7 +11,10 @@ export type AuditEntry = {
 };
 
 export async function logAudit(entry: AuditEntry) {
-  // @ts-expect-error - db is initialized in runtime singleton
+  if (!db) {
+    throw new Error('Database not initialized');
+  }
+
   await db.insert(auditLogSchema).values({
     actorId: entry.actorId,
     action: entry.action,
