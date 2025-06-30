@@ -81,3 +81,14 @@ export const organizationMemberSchema = pgTable(
     };
   },
 );
+
+export const auditLogSchema = pgTable('audit_log', {
+  id: serial('id').primaryKey(),
+  actorId: text('actor_id').notNull(),
+  action: text('action').notNull(),
+  entity: text('entity').notNull(),
+  metadata: text('metadata'),
+  createdAt: timestamp('created_at', { mode: 'date' })
+    .defaultNow()
+    .notNull(),
+});
