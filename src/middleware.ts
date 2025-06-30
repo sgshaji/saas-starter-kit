@@ -6,6 +6,9 @@ import {
 } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
+import { withRateLimit } from '@/middleware/withRateLimit';
+import { withSecureHeaders } from '@/middleware/withSecureHeaders';
+
 import { AllLocales, AppConfig } from './core/AppConfig';
 
 const intlMiddleware = createMiddleware({
@@ -23,10 +26,18 @@ const isProtectedRoute = createRouteMatcher([
   '/:locale/api(.*)',
 ]);
 
-export default function middleware(
+export default async function middleware(
   request: NextRequest,
   event: NextFetchEvent,
 ) {
+  // Rate limit only API and auth routes
+  if (request.nextUrl.pathname.startsWith('/api') || request.nextUrl.pathname.startsWith('/auth')) {
+    const limited = await withRateLimit(request);
+    if (limited) {
+      return limited;
+    }
+  }
+
   const ENABLE_TEAMS = process.env.NEXT_PUBLIC_ENABLE_TEAMS === 'true';
 
   if (
@@ -64,11 +75,13 @@ export default function middleware(
         return NextResponse.redirect(orgSelection);
       }
 
-      return intlMiddleware(req);
+      const resp = await intlMiddleware(req);
+      return withSecureHeaders(req, resp);
     })(request, event);
   }
 
-  return intlMiddleware(request);
+  const response = intlMiddleware(request);
+  return withSecureHeaders(request, response);
 }
 
 export const config = {

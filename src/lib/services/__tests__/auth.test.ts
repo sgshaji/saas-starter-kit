@@ -1,7 +1,10 @@
 import { clerkClient } from '@clerk/nextjs/server';
 import { describe, expect, it, vi } from 'vitest';
 
-import { getUserEmail } from '../auth';
+import { createGetUserEmail } from '@/application/user/get-user-email.usecase';
+import { ClerkUserRepository } from '@/application/user/user.repository';
+
+const getUserEmail = createGetUserEmail(new ClerkUserRepository());
 
 vi.mock('@clerk/nextjs/server', async () => {
   const actual = await vi.importActual<typeof import('@clerk/nextjs/server')>(
