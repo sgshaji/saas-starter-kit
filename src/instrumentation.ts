@@ -16,6 +16,9 @@ export async function register() {
       // Setting this option to true will print useful information to the console while you're setting up Sentry.
       debug: false,
     });
+
+    // Optionally start OpenTelemetry
+    await import('./instrumentation.otel');
   }
 
   if (process.env.NEXT_RUNTIME === 'edge') {
