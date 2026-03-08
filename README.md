@@ -53,6 +53,11 @@ pnpm docs:env
 
 to generate/update the markdown table at `docs/ENV_VARS.md`.
 
+> 🔒 **Security:** Never commit real secrets to the repository.
+> Use `.env.production.local` or `.env.local` for secrets on your local machine — these files are git-ignored.
+> For deployments, set secret environment variables through your hosting platform's environment variable settings (e.g., Vercel, Railway, Fly.io).
+> Use `.env.production.example` as a reference template for required variables.
+
 ## 🔄 Useful Commands
 
 | Command | Description |
