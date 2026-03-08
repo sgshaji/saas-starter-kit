@@ -41,7 +41,11 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# env files — ignore all real env files, but allow committed example templates
+.env
+.env.*
+!.env.example
+!.env.*.example
 .env*.local
 
 # local folder
